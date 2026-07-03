@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #33320f;
+}
+.header .section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: clamp(90px, vw, 110px);
+  height: auto;
+  max-height: 64px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  flex-shrink: 0;
+}/*# sourceMappingURL=Header.module.css.map */

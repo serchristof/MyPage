@@ -1,0 +1,70 @@
+@import "./global.module.scss";
+$tory: "../img/tory.jpg";
+$backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
+
+.hexGridContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1.1rem 0;
+  background-image: url(#{$backgroundPhoto});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hexagon {
+  stroke: #474014;
+  stroke-width: 0.2;
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 0 0.1rem #0d9e21);
+  transform-origin: center center;
+  cursor: pointer;
+
+}
+/* Szukaj polygonu wewnątrz grupy, która ma klasę kindImage */
+.hexagonKindImage polygon {
+  background-image: url(#{$tory});
+}
+
+/* Szukaj polygonu wewnątrz grupy, która ma klasę kindText */
+.hexagonKindText polygon {
+  fill: $secondary_background-color;
+}
+
+.hexGroup {
+  transform-origin: center center;
+}
+
+.hexGroupHovered {
+  transform: scale(1.08);
+}
+
+.label {
+  fill: white;
+  font-weight: 700;
+  font-size: 0.05rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.2px;
+  pointer-events: none;
+  paint-order: stroke fill;
+  stroke: #02070e;
+  stroke-width: 0.16;
+  stroke-linejoin: round;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.labelLong {
+  font-size: 0.04rem;
+  font-weight: 700;
+  fill: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.2px;
+  pointer-events: none;
+  paint-order: stroke fill;
+  stroke: #02070e;
+  stroke-width: 0.16;
+  stroke-linejoin: round;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}

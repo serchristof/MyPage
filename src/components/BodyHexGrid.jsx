@@ -1,0 +1,116 @@
+import { HexGrid, Layout, Hexagon, Pattern } from "react-hexgrid";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import tory from "../img/tory.jpg";
+import classes from "../styles/BodyHexGrid.module.scss";
+
+const HEXES = [
+  {
+    id: "about",
+    q: 0,
+    r: 0,
+    s: 0,
+    label: "About me",
+    kind: "image",
+    color: "#4f46e5",
+  },
+  {
+    id: "cv",
+    q: -2,
+    r: 1,
+    s: 1,
+    label: "CV",
+    kind: "text",
+    color: "#caef44",
+  },
+  {
+    id: "interests",
+    q: 2,
+    r: -1,
+    s: -1,
+    label: "Interests",
+    kind: "text",
+    color: "#10b981",
+  },
+  {
+    id: "intracore",
+    q: 1,
+    r: 1,
+    s: -2,
+    label: "Intracore(onbuild)",
+    kind: "text",
+    color: "#f59e0b",
+  },
+  {
+    id: "trovbites",
+    q: -1,
+    r: 2,
+    s: -1,
+    label: "Trovbites",
+    kind: "text",
+    color: "#ef4444",
+  },
+];
+
+function BodyHexGrid() {
+  const navigate = useNavigate();
+  const [hoveredHex, setHoveredHex] = useState(null);
+
+  const handleHexClick = (q, r, s) => {
+    navigate(`/hex/${q}/${r}/${s}`);
+  };
+
+  return (
+    <div className={classes.hexGridContainer}>
+      <HexGrid width={1280} height={640} viewBox="-22 -18 44 36">
+        <Pattern id="hex-image" link={tory} />
+
+        <Layout
+          size={{ x: 4.3, y: 4.3 }}
+          flat={true}
+          spacing={1.05}
+          origin={{ x: 0, y: 0 }}
+        >
+          {HEXES.map((hex) => {
+            const isHovered = hoveredHex === hex.id;
+            const isLongLabel = hex.label.length > 10;
+            const labelY = isLongLabel ? "0.95" : "0.98";
+            const labelClassName = isLongLabel
+              ? classes.labelLong
+              : classes.label;
+            const groupClassName = isHovered
+              ? `${classes.hexGroup} ${classes.hexGroupHovered}`
+              : classes.hexGroup;
+
+            return (
+              <g key={hex.id} className={groupClassName}>
+                <Hexagon
+                  q={hex.q}
+                  r={hex.r}
+                  s={hex.s}
+                  onClick={() => handleHexClick(hex.q, hex.r, hex.s)}
+                  onMouseEnter={() => setHoveredHex(hex.id)}
+                  onMouseLeave={() => setHoveredHex(null)}
+                  // className={`${classes.hexagon} ${hex.kind === "image" ? classes.hexagonKindImage : classes.hexagonKindText}`}
+                  className={`${classes.hexagon} ${hex.kind === "image" ? classes.hexagonKindImage : classes.hexagonKindText}`}
+                >
+                  <text
+                    x="0"
+                    y={labelY}
+                    className={labelClassName}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                  >
+                    {hex.label}
+                  </text>
+                </Hexagon>
+              </g>
+            );
+          })}
+        </Layout>
+      </HexGrid>
+    </div>
+  );
+}
+
+export default BodyHexGrid;

@@ -1,0 +1,23 @@
+@import './Global.module.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: $padding-base;
+  background-color: $header_background-color;
+
+  .section {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo {
+  width: clamp(90px, vw, 110px);
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
