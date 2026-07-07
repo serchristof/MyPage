@@ -1,0 +1,12 @@
+@import './Global.module.scss';
+
+.div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: $padding-base;
+  background-color: $header_background-color;
+}

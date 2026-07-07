@@ -13,7 +13,9 @@ function Socials() {
         <img src={yt} alt="youtube" className={style.icon} />
       </div>
       <div className={style.div}>
-        <img src={github} alt="github" className={style.icon} />
+        <a href="https://github.com/serchristof" target="_blank" rel="noopener noreferrer">
+          <img src={github} alt="github" className={style.icon} />
+        </a>
       </div>
     </header>
   );

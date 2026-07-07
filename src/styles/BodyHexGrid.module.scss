@@ -1,4 +1,4 @@
-@import "./global.module.scss";
+@import "./Global.module.scss";
 $tory: "../img/tory.jpg";
 $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 
@@ -15,11 +15,10 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 .hexagon {
   stroke: #474014;
   stroke-width: 0.2;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   filter: drop-shadow(0 0 0.1rem #0d9e21);
   transform-origin: center center;
   cursor: pointer;
-
 }
 /* Szukaj polygonu wewnątrz grupy, która ma klasę kindImage */
 .hexagonKindImage polygon {
@@ -36,7 +35,7 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 }
 
 .hexGroupHovered {
-  transform: scale(1.08);
+  transform: scale(1.02);
 }
 
 .label {

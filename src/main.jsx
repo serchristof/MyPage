@@ -9,6 +9,7 @@ import AboutMe from "./routes/AboutMe.jsx";
 import Trovebites from "./routes/Trovebites.jsx";
 import IntraCore from "./routes/IntraCore.jsx";
 import RootLayout from "./routes/RootLayout.jsx";
+import Interests from "./routes/Interests.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/intracore",
         element: <IntraCore />,
+      },
+            {
+        path: "/interests",
+        element: <Interests />,
       },
     ],
   },

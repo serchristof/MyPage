@@ -1,0 +1,29 @@
+@import "./Global.module.scss";
+.container {
+  display: grid;
+  /* Dwie kolumny o równej szerokości */
+  grid-template-columns: 1fr 2fr; 
+  gap: 20px;
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $primary_background-color;
+  .div {
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    .h1 {
+      display: block;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    .h2 {
+      display: block;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

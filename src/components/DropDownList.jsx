@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classes from "../styles/DropDownList.module.scss";
 
+
 function DropDownList() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -9,7 +10,7 @@ function DropDownList() {
   };
 
   return (
-    <span className={classes.span}>
+    <span className={classes.button}>
       <button onClick={toggleDropdown} className={classes.button}>
         {isOpen ? "Ukryj menu ▲" : "Pokaż menu ▼"}
       </button>

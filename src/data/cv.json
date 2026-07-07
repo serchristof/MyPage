@@ -1,0 +1,17 @@
+{
+  "imie": "Krzysztof",
+  "nazwisko": "Chorąży",
+  "opis": "Planista, inżynier budownictwa, programista, pasjonat nowych technologii.",
+  "doswiadczenie": [
+    {
+      "id": 1,
+      "firma": "Budimex S.A.",
+      "stanowisko": "Kierownik ds. Harmonogramowania"
+    },
+    {
+      "id": 2,
+      "firma": "E.R.B. JV",
+      "stanowisko": "South General Planning & Logistic Manager"
+    }
+  ]
+}
