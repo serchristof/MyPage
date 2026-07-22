@@ -10,6 +10,7 @@ import Trovebites from "./routes/Trovebites.jsx";
 import IntraCore from "./routes/IntraCore.jsx";
 import RootLayout from "./routes/RootLayout.jsx";
 import Interests from "./routes/Interests.jsx";
+import Kontakt from "./routes/Kontakt.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
         path: "/interests",
         element: <Interests />,
+      },
+      {
+        path: "/kontakt",
+        element: <Kontakt />,
       },
     ],
   },

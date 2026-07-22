@@ -4,13 +4,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
   padding: $padding-base;
   background-color: $header_background-color;
+  flex-wrap: wrap;
 
   .section {
     display: flex;
     align-items: center;
+    color: $secondary_background-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

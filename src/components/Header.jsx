@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "../styles/Header.module.scss";
 // import DropDownList from "./DropDownList";
 import Socials from "./Socials";
@@ -7,10 +8,18 @@ function Header() {
   return (
     <div>
       <header className={classes.header}>
-        <img src={logo} className={classes.logo} alt="Logo" />
-        <div className={classes.section}>About me</div>
-        <div className={classes.section}>Portfolio</div>
-        <div className={classes.section}>Contact</div>
+        <Link to="/">
+          <img src={logo} className={classes.logo} alt="Logo" />
+        </Link>
+        <Link to="/aboutme" className={classes.section}>
+          About me
+        </Link>
+        <Link to="/portfolio" className={classes.section}>
+          Portfolio
+        </Link>
+        <Link to="/kontakt" className={classes.section}>
+          Kontakt
+        </Link>
         <Socials />
         {/* <DropDownList /> */}
       </header>

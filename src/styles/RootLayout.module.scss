@@ -1,20 +1,21 @@
 @import './Global.module.scss';
 
 .div {
- 
-  width: 1280px;
-  height: 840px;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   padding: $padding-base;
   background-color: $header_background-color;
 
   .Header, .Footer, .Outlet {
-  
     align-items: center;
-    height: 200px;
     width: 100%;
-
   }
 }

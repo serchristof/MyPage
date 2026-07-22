@@ -1,17 +1,133 @@
 {
   "imie": "Krzysztof",
   "nazwisko": "Chorąży",
-  "opis": "Planista, inżynier budownictwa, programista, pasjonat nowych technologii.",
+  "dataUrodzenia": "13.06.1988",
+  "adres": "ul. Gnieźnieńska 27, 80-299 Gdańsk",
+  "telefon": "+48 721 894 870",
+  "email": "krzysztof.chorazy@gmail.com",
+  "opis": "Main Planning Manager with knowledge of the provisions of the Construction Law and FIDIC rules. High communication and managerial skills. Experience in multi-discipline coordination of works on large infrastructural projects. Pioneer in implementing new software and IT solutions.",
+  "atuty": [
+    "Umiejętności zarządcze i przywódcze",
+    "Komunikatywność",
+    "Kreatywność / wdrażanie nowych rozwiązań IT",
+    "Koordynacja wielobranżowa"
+  ],
   "doswiadczenie": [
     {
       "id": 1,
-      "firma": "Budimex S.A.",
-      "stanowisko": "Kierownik ds. Harmonogramowania"
+      "firma": "BUDIMEX S.A.",
+      "okres": "01.04.2026 – present",
+      "stanowisko": "Chief Planning Manager in the nuclear energy department – Leader"
     },
     {
       "id": 2,
-      "firma": "E.R.B. JV",
-      "stanowisko": "South General Planning & Logistic Manager"
+      "firma": "ERB Rail JV",
+      "okres": "01.06.2024 – 31.03.2026",
+      "stanowisko": "South General planning and logistic manager. Planning and risk manager and south planning field supervisor. Construction of Rail Baltica Latvia"
+    },
+    {
+      "id": 3,
+      "firma": "BUDIMEX S.A.",
+      "okres": "01.02.2020 – 31.05.2024",
+      "stanowisko": "Chief Planning Manager on the project: Construction of the Gdynia Port railway station"
+    },
+    {
+      "id": 4,
+      "firma": "BUDIMEX S.A.",
+      "okres": "01.02.2018 – 31.01.2020",
+      "stanowisko": "Chief Planning Manager on the project: Construction of a railway line no. 7 in the scope of: Lot A Otwock - Pilawa, Lot B Pilawa - Dęblin"
+    },
+    {
+      "id": 5,
+      "firma": "BUDIMEX S.A.",
+      "okres": "01.02.2017 – 31.01.2018",
+      "stanowisko": "Financial, Materials and Planning Manager on the project: Construction of a railroad bypass line no. 20 in Warsaw"
+    },
+    {
+      "id": 6,
+      "firma": "BUDIMEX S.A.",
+      "okres": "11.07.2015 – 31.01.2017",
+      "stanowisko": "Planning Specialist on the project: ITPOK in the scope of reconstruction of Gdyńska street and Bałtycka street in Poznań"
+    },
+    {
+      "id": 7,
+      "firma": "BUDIMEX S.A.",
+      "okres": "12.11.2013 – 10.07.2015",
+      "stanowisko": "Construction engineer on the project: Construction of a railway line no. 9 in the scope of: Montowo – Susz (LCS Iława)"
+    },
+    {
+      "id": 8,
+      "firma": "PKP PLK S.A. CRI w Poznaniu",
+      "okres": "01.07.2013 - 30.09.2013",
+      "stanowisko": "Contract Manager assistant"
+    },
+    {
+      "id": 9,
+      "firma": "SENER Sp. z o.o.",
+      "okres": "02.07.2012 - 28.09.2012",
+      "stanowisko": "Main Designer assistant"
+    },
+    {
+      "id": 10,
+      "firma": "FEROCO S.A.",
+      "okres": "01.07.2011 – 31.07.2011",
+      "stanowisko": "Trainee engineer on the construction site: Railway line no. 9 in the scope of: LCS Gdynia"
     }
-  ]
+  ],
+  "uprawnienia": [
+    "Uprawnienia budowlane bez ograniczeń do kierowania robotami w specjalności inżynieryjnej kolejowej w zakresie kolejowych obiektów budowlanych",
+    "Uprawnienia budowlane bez ograniczeń do kierowania robotami w specjalności inżynieryjnej drogowej"
+  ],
+  "programy": [
+    { "nazwa": "Primavera P6", "poziom": 5 },
+    { "nazwa": "Tilos", "poziom": 5 },
+    { "nazwa": "Powerproject 4D", "poziom": 5 },
+    { "nazwa": "Novade", "poziom": 5 },
+    { "nazwa": "MS Project", "poziom": 4 },
+    { "nazwa": "MS Excel", "poziom": 4 },
+    { "nazwa": "MS Word / PowerPoint / Visio / Access", "poziom": 4 },
+    { "nazwa": "Power BI", "poziom": 3 },
+    { "nazwa": "Synchro", "poziom": 3 },
+    { "nazwa": "AutoCad / AutoCad Civil 3D", "poziom": 3 },
+    { "nazwa": "Autodesk Navisworks / BIMVision", "poziom": 3 }
+  ],
+  "inneUmiejetnosci": "Bardzo dobra znajomość procedur FIDIC (yellow, red book) oraz PMBOK Guide. Prawo jazdy kat. B.",
+  "szkolenia": [
+    { "okres": "22.03.2022 – 24.03.2022", "nazwa": "CERTIFICATE T103 TILOS Advanced Training Program", "organizator": "DAT Computer Concepts" },
+    { "okres": "28.02.2019", "nazwa": "Oracle Primavera P6 advanced training in project management", "organizator": "DAT Computer Concepts" },
+    { "okres": "29.10.2018 – 30.10.2018", "nazwa": "Formal and legal aspects of modernization and construction of railway lines", "organizator": "IKKU Training and Consulting Centre" },
+    { "okres": "27.08.2018 – 28.08.2018", "nazwa": "Project management", "organizator": "CERTES" },
+    { "okres": "08.12.2016 – 09.12.2016", "nazwa": "Earthworks", "organizator": "Academy of Engineers Budimex S.A." },
+    { "okres": "06.09.2016 – 07.09.2016", "nazwa": "Managing people and safety on the construction site", "organizator": "House of Skills" },
+    { "okres": "20.06.2016 – 21.06.2016", "nazwa": "NORMA PRO - program support in the basic scope and advanced", "organizator": "Academy of Engineers Budimex S.A." },
+    { "okres": "06.06.2016 – 07.06.2016", "nazwa": "Economic and formal procedures of production", "organizator": "Academy of Engineers Budimex S.A." },
+    { "okres": "30.11 – 01.12.2015", "nazwa": "Microsoft Project 2013 – advanced course", "organizator": "Comarch" },
+    { "okres": "23.11.2015 – 24.11.2015", "nazwa": "MS Excel 2010 intermediate (dedicated)", "organizator": "PC OPEN" },
+    { "okres": "10.02.2014 – 11.02.2014", "nazwa": "Implementation of the investment in accordance with the FIDIC contract conditions", "organizator": "CONTRACT" }
+  ],
+  "edukacja": [
+    {
+      "okres": "2012-2013",
+      "uczelnia": "Politechnika Poznańska",
+      "wydzial": "Wydział Budownictwa i Inżynierii Środowiska",
+      "kierunek": "Studia magisterskie, kierunek: Budownictwo kolejowe"
+    },
+    {
+      "okres": "2009-2013",
+      "uczelnia": "Politechnika Poznańska",
+      "wydzial": "Wydział Inżynierii Zarządzania",
+      "kierunek": "Studia inżynierskie, kierunek: Zarządzanie"
+    },
+    {
+      "okres": "2007-2012",
+      "uczelnia": "Politechnika Poznańska",
+      "wydzial": "Wydział Budownictwa i Inżynierii Środowiska",
+      "kierunek": "Studia inżynierskie, kierunek: Budownictwo kolejowe"
+    }
+  ],
+  "jezyki": [
+    { "jezyk": "Polski", "poziom": "ojczysty", "poziomLiczba": 5 },
+    { "jezyk": "Angielski", "poziom": "upper intermediate", "poziomLiczba": 3 }
+  ],
+  "hobby": ["Spływy kajakowe", "Oglądanie lekkoatletyki", "Nowe technologie IT"]
 }

@@ -5,20 +5,37 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 .hexGridContainer {
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   padding: 1.1rem 0;
   background-image: url(#{$backgroundPhoto});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 .hexagon {
-  stroke: #474014;
+  stroke: #000;
   stroke-width: 0.2;
+  stroke-opacity: 0.35;
   transition: all 0.1s ease;
-  filter: drop-shadow(0 0 0.1rem #0d9e21);
+  filter: drop-shadow(0 0 0.05rem #{$secondary_background-color});
   transform-origin: center center;
   cursor: pointer;
+
+  polygon {
+    fill-opacity: 0.4;
+  }
 }
 /* Szukaj polygonu wewnątrz grupy, która ma klasę kindImage */
 .hexagonKindImage polygon {

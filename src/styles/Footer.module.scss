@@ -1,12 +1,55 @@
-@import './Global.module.scss';
+@import "./Global.module.scss";
 
-.div {
-  display: block;
-  height: 100%;
-  width: 100%;
+.footer {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: $padding-base;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem $padding-base;
+  margin-top: auto;
   background-color: $header_background-color;
+  color: #f2f2f2;
+  font-family: $font-family;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 160px;
+}
+
+.brand {
+  margin: 0;
+  font-weight: bold;
+  color: $secondary_background-color;
+}
+
+.copy {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #b7b7b7;
+}
+
+.contact {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+nav.column {
+  align-items: flex-start;
+
+  a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      color: $secondary_background-color;
+      text-decoration: underline;
+    }
+  }
 }

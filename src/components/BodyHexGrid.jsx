@@ -40,7 +40,7 @@ const HEXES = [
     q: 1,
     r: 1,
     s: -2,
-    label: "Intracore(onbuild)",
+    label: "Intracore",
     kind: "text",
     color: "#f59e0b",
     path: "/intracore",
@@ -74,7 +74,7 @@ function BodyHexGrid() {
           {HEXES.map((hex) => {
             const isHovered = hoveredHex === hex.id;
             const isLongLabel = hex.label.length > 10;
-            const labelY = isLongLabel ? "0.95" : "0.98";
+            const labelY = "0";
             const labelClassName = isLongLabel
               ? classes.labelLong
               : classes.label;

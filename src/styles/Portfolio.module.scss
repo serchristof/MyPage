@@ -1,29 +1,165 @@
 @import "./Global.module.scss";
+
+$panel-bg: #1c1c1c;
+$panel-bg-alt: #232323;
+$accent: $secondary_background-color;
+$text-light: #f2f2f2;
+$text-muted: #b7b7b7;
+
 .container {
   display: grid;
-  /* Dwie kolumny o równej szerokości */
-  grid-template-columns: 1fr 2fr; 
-  gap: 20px;
+  grid-template-columns: 320px 1fr;
   font-family: $font-family;
-  color: $font-color;
-  background-color: $primary_background-color;
-  .div {
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    .h1 {
-      display: block;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
-    .h2 {
-      display: block;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
+  color: $text-light;
+  background-color: $panel-bg-alt;
+  min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  background-color: $panel-bg;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 3px solid $accent;
+}
+
+/* --- Shared section styles --- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  color: $accent;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid $accent;
+  padding-bottom: 6px;
+  margin: 0 0 4px 0;
+}
+
+.plainList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: $text-muted;
+  font-size: 0.9rem;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: $text-muted;
+
+  li::before {
+    content: "\2713  ";
+    color: $accent;
   }
+}
+
+.entry {
+  margin-bottom: 10px;
+}
+
+.entryDate {
+  color: $accent;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.entryTitle {
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+.entrySub {
+  color: $text-muted;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: $text-muted;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.dotFilled,
+.dotEmpty {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotFilled {
+  background-color: $accent;
+}
+
+.dotEmpty {
+  background-color: transparent;
+  border: 1px solid $text-muted;
+}
+
+/* --- Main content --- */
+.main {
+  padding: 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero {
+  background-color: $accent;
+  color: #111;
+  margin: 0 -40px 10px;
+  padding: 30px 40px;
+}
+
+.name {
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
+}
+
+.heroSubtitle {
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
+.heroText {
+  margin: 0;
+  max-width: 700px;
+}
+
+.note {
+  color: $text-muted;
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
 }
