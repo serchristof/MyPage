@@ -1,4 +1,4 @@
-@import "./Global.module.scss";
+@use "./Global.module.scss" as *;
 
 .footer {
   display: flex;
@@ -10,9 +10,7 @@
   box-sizing: border-box;
   padding: 1.5rem $padding-base;
   margin-top: auto;
-  background-color: $header_background-color;
-  color: #f2f2f2;
-  font-family: $font-family;
+  border-top: 1px solid var(--color-border);
 }
 
 .column {
@@ -24,14 +22,14 @@
 
 .brand {
   margin: 0;
-  font-weight: bold;
-  color: $secondary_background-color;
+  font-weight: 600;
+  color: var(--brand-gold);
 }
 
 .copy {
   margin: 0;
   font-size: 0.8rem;
-  color: #b7b7b7;
+  opacity: 0.75;
 }
 
 .contact {
@@ -43,12 +41,13 @@ nav.column {
   align-items: flex-start;
 
   a {
-    color: #f2f2f2;
+    color: var(--brand-cream);
     text-decoration: none;
     font-size: 0.9rem;
 
-    &:hover {
-      color: $secondary_background-color;
+    &:hover,
+    &:focus-visible {
+      color: var(--brand-gold);
       text-decoration: underline;
     }
   }

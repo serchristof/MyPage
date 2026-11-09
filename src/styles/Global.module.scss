@@ -1,7 +1,2 @@
-// Przykładowe zmienne SASS
-$header_background-color: #33320f;
-$padding-base: 5px;
-$font-color: #333;
-$font-family: Arial, sans-serif;
-$primary_background-color: #757710;
-$secondary_background-color: #dfdb16;
+// Kolory, promienie i cienie pochodzą z tokens.css (var(--...)).
+$padding-base: 1rem;

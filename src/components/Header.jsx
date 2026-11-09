@@ -7,7 +7,7 @@ import logo from "../img/logo.jpeg";
 function Header() {
   return (
     <div>
-      <header className={classes.header}>
+      <header className={`hero ${classes.header}`}>
         <Link to="/">
           <img src={logo} className={classes.logo} alt="Logo" />
         </Link>

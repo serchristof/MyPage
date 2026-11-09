@@ -1,23 +1,15 @@
-@import "./Global.module.scss";
-
-$panel-bg: #1c1c1c;
-$panel-bg-alt: #232323;
-$accent: $secondary_background-color;
-$text-light: #f2f2f2;
-$text-muted: #b7b7b7;
-
 .container {
   display: grid;
   grid-template-columns: 320px 1fr;
-  font-family: $font-family;
-  color: $text-light;
-  background-color: $panel-bg-alt;
+  color: var(--color-text);
+  background-color: var(--color-surface);
   min-height: 100vh;
 }
 
 /* --- Sidebar --- */
 .sidebar {
-  background-color: $panel-bg;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-border);
   padding: 30px 24px;
   display: flex;
   flex-direction: column;
@@ -30,7 +22,7 @@ $text-muted: #b7b7b7;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto;
-  border: 3px solid $accent;
+  border: 3px solid var(--color-yellow);
 }
 
 /* --- Shared section styles --- */
@@ -41,11 +33,12 @@ $text-muted: #b7b7b7;
 }
 
 .sectionTitle {
-  color: $accent;
+  color: var(--color-accent);
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  border-bottom: 2px solid $accent;
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 6px;
   margin: 0 0 4px 0;
 }
@@ -57,7 +50,7 @@ $text-muted: #b7b7b7;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: $text-muted;
+  color: var(--color-muted);
   font-size: 0.9rem;
 }
 
@@ -69,11 +62,11 @@ $text-muted: #b7b7b7;
   flex-direction: column;
   gap: 6px;
   font-size: 0.9rem;
-  color: $text-muted;
+  color: var(--color-muted);
 
   li::before {
     content: "\2713  ";
-    color: $accent;
+    color: var(--color-accent);
   }
 }
 
@@ -82,7 +75,7 @@ $text-muted: #b7b7b7;
 }
 
 .entryDate {
-  color: $accent;
+  color: var(--color-accent);
   font-size: 0.8rem;
   margin: 0;
 }
@@ -93,7 +86,7 @@ $text-muted: #b7b7b7;
 }
 
 .entrySub {
-  color: $text-muted;
+  color: var(--color-muted);
   font-size: 0.85rem;
   margin: 0;
 }
@@ -103,7 +96,7 @@ $text-muted: #b7b7b7;
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: $text-muted;
+  color: var(--color-muted);
 }
 
 .dots {
@@ -120,12 +113,12 @@ $text-muted: #b7b7b7;
 }
 
 .dotFilled {
-  background-color: $accent;
+  background-color: var(--color-yellow);
 }
 
 .dotEmpty {
   background-color: transparent;
-  border: 1px solid $text-muted;
+  border: 1px solid var(--color-muted);
 }
 
 /* --- Main content --- */
@@ -137,8 +130,6 @@ $text-muted: #b7b7b7;
 }
 
 .hero {
-  background-color: $accent;
-  color: #111;
   margin: 0 -40px 10px;
   padding: 30px 40px;
 }
@@ -146,9 +137,11 @@ $text-muted: #b7b7b7;
 .name {
   margin: 0 0 10px 0;
   font-size: 2.2rem;
+  color: var(--brand-cream);
 }
 
 .heroSubtitle {
+  color: var(--brand-gold);
   text-transform: uppercase;
   margin: 0 0 6px 0;
 }
@@ -159,7 +152,26 @@ $text-muted: #b7b7b7;
 }
 
 .note {
-  color: $text-muted;
+  color: var(--color-muted);
   font-size: 0.85rem;
   margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: none;
+  }
+
+  .main {
+    padding: 0 20px 30px;
+  }
+
+  .hero {
+    margin: 0 -20px 10px;
+    padding: 24px 20px;
+  }
 }

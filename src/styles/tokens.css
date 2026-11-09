@@ -1,0 +1,88 @@
+/*
+ * Planiteus design tokens, copied from the app (apps/web/src/styles.css).
+ * One accent colour for everything: #FFB300. Same names as in the app,
+ * so the site and the app look like one product.
+ */
+:root {
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-text: #1d2330;
+  --color-muted: #6b7385;
+  --color-border: rgb(255 179 0 / 45%);
+  --color-yellow: #ffb300;
+  /* Text in the accent colour on white: darker amber for contrast (#ffb300 on white is ~1.9:1). */
+  --color-accent: #b37d00;
+  --color-accent-border: #ffb300;
+  --color-accent-soft: #fff4d6;
+  --color-on-yellow: #1d2330; /* text on #ffb300 buttons, both themes */
+  --color-good-text: #13703a;
+  --color-danger-text: #b42318;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  color-scheme: light;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Dark theme of the app (slightly lighter than the logo navy --brand-navy). */
+[data-theme='dark'] {
+  --color-bg: #0a1628;
+  --color-surface: #111f36;
+  --color-text: #e6e9ef;
+  --color-muted: #9aa4b8;
+  --color-border: rgb(255 179 0 / 45%);
+  --color-accent: #ffb300;
+  --color-accent-soft: rgb(255 179 0 / 14%);
+  --color-good-text: #7ddc9a;
+  --color-danger-text: #ff8a80;
+  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+/*
+ * Brand colours measured from assets/logo-1254.png (median of each pixel group;
+ * logo-512.png gives the same values within 1-2 units).
+ */
+:root {
+  --brand-navy: #041123;      /* logo background (93% of pixels; edges #051325) */
+  --brand-gold: #ebba71;      /* circle and Gantt bars; range #e0ac64–#ecc07c */
+  --brand-gold-deep: #e0ac64; /* darker gold shade of the circle */
+  --brand-cream: #f2e0c6;     /* figure and the "Planiteus" lettering */
+}
+
+html {
+  font-size: 17px; /* the app uses 17 px as its base */
+}
+
+.button-primary {
+  background: var(--color-yellow);
+  color: var(--color-on-yellow);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+/*
+ * Hero section: logo gold instead of #ffb300. Same look in both themes,
+ * because the hero always sits on the logo navy.
+ * Contrast: gold on navy ~10:1, navy on gold ~10:1.
+ */
+.hero {
+  --color-yellow: var(--brand-gold);
+  --color-accent: var(--brand-gold);
+  --color-accent-border: var(--brand-gold);
+  --color-border: rgb(235 186 113 / 45%);
+  --color-on-yellow: var(--brand-navy);
+  background: var(--brand-navy);
+  color: var(--brand-cream);
+}
+
+.hero .button-primary:hover {
+  background: var(--brand-gold-deep);
+}

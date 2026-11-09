@@ -1,4 +1,4 @@
 function Interests() {
-  return <div>Interests</div>;
+  return <div className="card page-stub">Interests</div>;
 }
 export default Interests;

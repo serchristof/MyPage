@@ -1,10 +1,19 @@
 import { HexGrid, Layout, Hexagon, Pattern } from "react-hexgrid";
-import { useState } from "react";
 
 import tory from "../img/tory.jpg";
 import classes from "../styles/BodyHexGrid.module.scss";
 import { Link } from "react-router-dom";
 const HEXES = [
+  {
+    id: "planiteus",
+    q: 0,
+    r: -2,
+    s: 2,
+    label: "Planiteus",
+    kind: "text",
+    url: "https://www.planiteus.pl",
+    featured: true,
+  },
   {
     id: "about",
     q: 0,
@@ -58,11 +67,9 @@ const HEXES = [
 ];
 
 function BodyHexGrid() {
-  const [hoveredHex, setHoveredHex] = useState(null);
-
   return (
     <div className={classes.hexGridContainer}>
-      <HexGrid width={1280} height={640} viewBox="-22 -18 44 36">
+      <HexGrid width={1280} height={640} viewBox="-22 -21 44 38">
         <Pattern id="hex-image" link={tory} />
 
         <Layout
@@ -72,41 +79,44 @@ function BodyHexGrid() {
           origin={{ x: 0, y: 0 }}
         >
           {HEXES.map((hex) => {
-            const isHovered = hoveredHex === hex.id;
             const isLongLabel = hex.label.length > 10;
-            const labelY = "0";
             const labelClassName = isLongLabel
               ? classes.labelLong
               : classes.label;
-            const groupClassName = isHovered
-              ? `${classes.hexGroup} ${classes.hexGroupHovered}`
-              : classes.hexGroup;
+            const hexClassName = hex.featured
+              ? `${classes.hexagon} ${classes.hexagonFeatured}`
+              : classes.hexagon;
+
+            const hexagon = (
+              <Hexagon q={hex.q} r={hex.r} s={hex.s} className={hexClassName}>
+                <text
+                  x="0"
+                  y="0"
+                  className={labelClassName}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                >
+                  {hex.label}
+                </text>
+              </Hexagon>
+            );
 
             return (
-              <g key={hex.id} className={groupClassName}>
-                <Link to={hex.path} className={classes.hexLink}>
-                  <Hexagon
-                    q={hex.q}
-                    r={hex.r}
-                    s={hex.s}
-                    // onClick={() => handleHexClick(hex.q, hex.r, hex.s)}
-                    onMouseEnter={() => setHoveredHex(hex.id)}
-                    onMouseLeave={() => setHoveredHex(null)}
-                    // className={`${classes.hexagon} ${hex.kind === "image" ? classes.hexagonKindImage : classes.hexagonKindText}`}
-                    className={`${classes.hexagon} ${hex.kind === "image" ? classes.hexagonKindImage : classes.hexagonKindText}`}
+              <g key={hex.id} className={classes.hexGroup}>
+                {hex.url ? (
+                  <a
+                    href={hex.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={classes.hexLink}
                   >
-                    <text
-                      x="0"
-                      y={labelY}
-                      className={labelClassName}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                    >
-                      {hex.label}
-                    </text>
-                    <Link to={hex.path} className={classes.hexLink}></Link>
-                  </Hexagon>
-                </Link>
+                    {hexagon}
+                  </a>
+                ) : (
+                  <Link to={hex.path} className={classes.hexLink}>
+                    {hexagon}
+                  </Link>
+                )}
               </g>
             );
           })}

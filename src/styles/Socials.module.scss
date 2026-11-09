@@ -1,18 +1,17 @@
-@import "./Global.module.scss";
-
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.5rem;
-  background-color: $header_background-color;
+  padding: 0.35rem 0;
 }
 
 .div {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4px;
+  border-radius: var(--radius);
+  background-color: var(--brand-cream);
 }
 
 .icon {
@@ -20,5 +19,4 @@
   height: 18px;
   object-fit: contain;
   display: block;
-  filter: brightness(0.95);
 }

@@ -8,6 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>mypage</title>
+    <script>
+      // Motyw zgodny z ustawieniem systemu (ciemny wariant z tokens.css).
+      const darkScheme = matchMedia("(prefers-color-scheme: dark)");
+      const applyTheme = () => {
+        document.documentElement.dataset.theme = darkScheme.matches ? "dark" : "light";
+      };
+      applyTheme();
+      darkScheme.addEventListener("change", applyTheme);
+    </script>
   </head>
   <body>
     <div id="root"></div>

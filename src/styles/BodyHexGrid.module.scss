@@ -1,16 +1,22 @@
-@import "./Global.module.scss";
-$tory: "../img/tory.jpg";
 $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 
 .hexGridContainer {
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
   padding: 1.1rem 0;
-  background-image: url(#{$backgroundPhoto});
+  background-color: var(--brand-navy);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--brand-navy) 78%, transparent),
+      color-mix(in srgb, var(--brand-navy) 78%, transparent)
+    ),
+    url(#{$backgroundPhoto});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -25,62 +31,74 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 }
 
 .hexagon {
-  stroke: #000;
-  stroke-width: 0.2;
-  stroke-opacity: 0.35;
-  transition: all 0.1s ease;
-  filter: drop-shadow(0 0 0.05rem #{$secondary_background-color});
-  transform-origin: center center;
+  stroke: var(--brand-gold);
+  stroke-width: 0.15;
   cursor: pointer;
 
   polygon {
-    fill-opacity: 0.4;
+    fill: var(--brand-navy);
+    fill-opacity: 0.82;
+    transition:
+      fill 0.15s ease,
+      fill-opacity 0.15s ease;
   }
 }
-/* Szukaj polygonu wewnątrz grupy, która ma klasę kindImage */
-.hexagonKindImage polygon {
-  background-image: url(#{$tory});
-}
 
-/* Szukaj polygonu wewnątrz grupy, która ma klasę kindText */
-.hexagonKindText polygon {
-  fill: $secondary_background-color;
+.hexagonFeatured polygon {
+  fill: var(--brand-gold);
+  fill-opacity: 1;
 }
 
 .hexGroup {
+  transform-box: fill-box;
   transform-origin: center center;
+  transition: transform 0.15s ease;
+
+  &:hover,
+  &:focus-within {
+    transform: scale(1.03);
+  }
 }
 
-.hexGroupHovered {
-  transform: scale(1.02);
+.hexLink {
+  outline: none;
+
+  &:hover polygon,
+  &:focus-visible polygon {
+    fill: var(--brand-gold);
+    fill-opacity: 1;
+  }
+
+  &:hover .label,
+  &:hover .labelLong,
+  &:focus-visible .label,
+  &:focus-visible .labelLong {
+    fill: var(--brand-navy);
+  }
+
+  &:hover .hexagonFeatured polygon,
+  &:focus-visible .hexagonFeatured polygon {
+    fill: var(--brand-gold-deep);
+  }
 }
 
 .label {
-  fill: white;
-  font-weight: 700;
-  font-size: 0.05rem;
-  font-family: "Segoe UI", Arial, sans-serif;
-  letter-spacing: 0.2px;
+  fill: var(--brand-cream);
+  stroke: none;
+  font-weight: 600;
+  font-size: 0.055rem;
   pointer-events: none;
-  paint-order: stroke fill;
-  stroke: #02070e;
-  stroke-width: 0.16;
-  stroke-linejoin: round;
   text-anchor: middle;
   dominant-baseline: middle;
+  transition: fill 0.15s ease;
 }
 
 .labelLong {
-  font-size: 0.04rem;
-  font-weight: 700;
-  fill: white;
-  font-family: "Segoe UI", Arial, sans-serif;
-  letter-spacing: 0.2px;
-  pointer-events: none;
-  paint-order: stroke fill;
-  stroke: #02070e;
-  stroke-width: 0.16;
-  stroke-linejoin: round;
-  text-anchor: middle;
-  dominant-baseline: middle;
+  @extend .label;
+  font-size: 0.044rem;
+}
+
+.hexagonFeatured .label,
+.hexagonFeatured .labelLong {
+  fill: var(--brand-navy);
 }

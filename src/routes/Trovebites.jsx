@@ -1,4 +1,4 @@
 function Trovebites() {
-  return <div>Trovebites</div>;
+  return <div className="card page-stub">Trovebites</div>;
 }
 export default Trovebites;

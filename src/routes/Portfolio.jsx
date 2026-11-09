@@ -63,7 +63,7 @@ function Portfolio() {
       </aside>
 
       <main className={classes.main}>
-        <header className={classes.hero}>
+        <header className={`hero ${classes.hero}`}>
           <h1 className={classes.name}>
             {cv.imie} {cv.nazwisko}
           </h1>

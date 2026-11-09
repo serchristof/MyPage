@@ -1,4 +1,4 @@
 function IntraCore() {
-  return <div>IntraCore</div>;
+  return <div className="card page-stub">IntraCore</div>;
 }
 export default IntraCore;

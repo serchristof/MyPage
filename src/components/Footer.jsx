@@ -7,7 +7,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={classes.footer}>
+    <footer className={`hero ${classes.footer}`}>
       <div className={classes.column}>
         <p className={classes.brand}>
           {cv.imie} {cv.nazwisko}
