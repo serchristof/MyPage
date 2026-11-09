@@ -69,7 +69,7 @@ const HEXES = [
 function BodyHexGrid() {
   return (
     <div className={classes.hexGridContainer}>
-      <HexGrid width={1280} height={640} viewBox="-22 -21 44 38">
+      <HexGrid width={724} height={708} viewBox="-18.1 -19.6 36.2 35.4">
         <Pattern id="hex-image" link={tory} />
 
         <Layout
@@ -78,7 +78,7 @@ function BodyHexGrid() {
           spacing={1.03}
           origin={{ x: 0, y: 0 }}
         >
-          {HEXES.map((hex) => {
+          {HEXES.map((hex, index) => {
             const isLongLabel = hex.label.length > 10;
             const labelClassName = isLongLabel
               ? classes.labelLong
@@ -102,7 +102,11 @@ function BodyHexGrid() {
             );
 
             return (
-              <g key={hex.id} className={classes.hexGroup}>
+              <g
+                key={hex.id}
+                className={classes.hexGroup}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                 {hex.url ? (
                   <a
                     href={hex.url}

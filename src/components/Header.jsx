@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import classes from "../styles/Header.module.scss";
 // import DropDownList from "./DropDownList";
 import Socials from "./Socials";
-import logo from "../img/logo.jpeg";
+import logo from "../img/logo-header.png";
 
 function Header() {
   return (

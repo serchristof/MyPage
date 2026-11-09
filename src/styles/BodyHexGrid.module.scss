@@ -1,4 +1,4 @@
-$backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
+$backgroundPhoto: "../img/background_moder.jpg";
 
 .hexGridContainer {
   flex: 1;
@@ -8,24 +8,49 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
   padding: 1.1rem 0;
   background-color: var(--brand-navy);
-  background-image:
-    linear-gradient(
-      color-mix(in srgb, var(--brand-navy) 78%, transparent),
-      color-mix(in srgb, var(--brand-navy) 78%, transparent)
-    ),
-    url(#{$backgroundPhoto});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+
+  // Zdjęcie: wolne pojawienie się i delikatny, ciągły najazd kamery.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url(#{$backgroundPhoto});
+    background-repeat: no-repeat;
+    background-position: 68% center;
+    background-size: cover;
+    will-change: transform;
+    animation:
+      photoFadeIn 2.2s ease-out both,
+      photoDrift 40s ease-in-out infinite alternate;
+  }
+
+  // Górna i dolna krawędź wtapiają się w granat nagłówka i stopki.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      var(--brand-navy),
+      transparent 16%,
+      transparent 86%,
+      var(--brand-navy)
+    );
+  }
 
   svg {
     display: block;
     width: 100%;
     height: auto;
     max-width: 1280px;
+    max-height: clamp(620px, calc(100dvh - 150px), 920px);
     margin: 0 auto;
   }
 }
@@ -53,6 +78,7 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
   transform-box: fill-box;
   transform-origin: center center;
   transition: transform 0.15s ease;
+  animation: hexAppear 1.4s ease-out backwards;
 
   &:hover,
   &:focus-within {
@@ -101,4 +127,33 @@ $backgroundPhoto: "../img/HexGridContainerBackgroundPhoto.jpg";
 .hexagonFeatured .label,
 .hexagonFeatured .labelLong {
   fill: var(--brand-navy);
+}
+
+@keyframes hexAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+}
+
+@keyframes photoFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes photoDrift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hexGridContainer::before,
+  .hexGroup {
+    animation: none;
+  }
 }
